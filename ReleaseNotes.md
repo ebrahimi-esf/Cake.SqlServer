@@ -39,7 +39,7 @@
 ### New in 1.8.4
 * Added SqlCommandVariableValues to PublishDacpacSettings
 
-### New in 1.8
+### New in 1.8.0
 * Option to disable switch to single user mode on backup restoring #31
 * Fix for ignored timeout on Backup Restore #33
 
@@ -70,9 +70,9 @@
 ### New in 1.2.1
 * Alias to CreateDatabase - fails if the database already exists.
 
-### New in 1.1.1 (Released 2016/10/20)
+### New in 1.1.1
 * Functionality to work with LocalDB instances.
 
-### New in 1.0.1 (Released 2016/09/08)
+### New in 1.0.1
 * Initial methods for `DropDatabase`, `CreateDatabaseIfNotExists`, `DropAndCreateDatabase`, `ExecuteSqlCommand`, `ExecuteSqlFile`.
 

@@ -86,6 +86,27 @@ namespace Tests
             result["31Oct"].Should().Be("25Dec");
         }
 
+        [Test]
+        public void CreateMsSqlServerDb()
+        {
+            // Arrange
+            const string msSqlServerConnString = "Server=172.29.80.1;Persist Security Info=False;" +
+                                                 "User ID=sa;" +
+                                                 "Password=!23qweasdrez;" +
+                                                 "Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=True";
+
+            const string dbName = "EXAMPLE_DATABASE2";
+
+            // Act
+            SqlServerAliases.CreateDatabaseIfNotExists(context, msSqlServerConnString, dbName);
+
+            // Assert
+            SqlHelpers.DbExists(msSqlServerConnString, dbName).Should().BeTrue();
+
+            // Clean up
+            SqlHelpers.DropDatabase(msSqlServerConnString, dbName);
+        }
+
         private static string? GetDacpacFilePath()
         {
             var testDataDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory!, "TestData");

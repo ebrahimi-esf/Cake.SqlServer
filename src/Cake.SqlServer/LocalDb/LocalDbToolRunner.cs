@@ -9,19 +9,11 @@ namespace Cake.SqlServer
 {
     internal class LocalDbToolRunner : Tool<LocalDbSettings>
     {
-        private readonly IFileSystem fileSystem;
-        private readonly ICakeEnvironment environment;
-        private readonly IProcessRunner processRunner;
-        private readonly IToolLocator toolsLocator;
         private readonly ICakeLog contextLog;
 
         public LocalDbToolRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICakeLog contextLog)
             : base(fileSystem, environment, processRunner, tools)
         {
-            this.fileSystem = fileSystem;
-            this.environment = environment;
-            this.processRunner = processRunner;
-            toolsLocator = tools;
             this.contextLog = contextLog;
         }
 

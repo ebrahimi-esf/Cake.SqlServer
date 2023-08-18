@@ -1,6 +1,6 @@
-#tool "nuget:?package=NUnit.ConsoleRunner&version=3.13.0"
-#tool "nuget:?package=GitVersion.CommandLine&version=5.8.1"
-#tool "nuget:?package=NuGet.CommandLine&version=5.9.1"
+#tool "nuget:?package=NUnit.ConsoleRunner&version=3.16.3"
+#tool "nuget:?package=GitVersion.CommandLine&version=5.12.0"
+#tool "nuget:?package=NuGet.CommandLine&version=6.6.1"
 #load "./parameters.cake"
 
 
@@ -147,21 +147,16 @@ Task("Copy-Files")
     .Does(() =>
 	{
         EnsureDirectoryExists(parameters.ResultBinDir);
-        EnsureDirectoryExists(parameters.ResultBinDir + "/netcoreapp3.1");
-        EnsureDirectoryExists(parameters.ResultBinDir + "/net5.0");
         EnsureDirectoryExists(parameters.ResultBinDir + "/net6.0");
-
-        CopyFileToDirectory(parameters.BuildDir + "/netcoreapp3.1/Cake.SqlServer.dll", parameters.ResultBinDir + "/netcoreapp3.1");
-        CopyFileToDirectory(parameters.BuildDir + "/netcoreapp3.1/Cake.SqlServer.pdb", parameters.ResultBinDir + "/netcoreapp3.1");
-        CopyFileToDirectory(parameters.BuildDir + "/netcoreapp3.1/Cake.SqlServer.xml", parameters.ResultBinDir + "/netcoreapp3.1");
-
-        CopyFileToDirectory(parameters.BuildDir + "/net5.0/Cake.SqlServer.dll", parameters.ResultBinDir + "/net5.0");
-        CopyFileToDirectory(parameters.BuildDir + "/net5.0/Cake.SqlServer.pdb", parameters.ResultBinDir + "/net5.0");
-        CopyFileToDirectory(parameters.BuildDir + "/net5.0/Cake.SqlServer.xml", parameters.ResultBinDir + "/net5.0");
+        EnsureDirectoryExists(parameters.ResultBinDir + "/net7.0");
 
         CopyFileToDirectory(parameters.BuildDir + "/net6.0/Cake.SqlServer.dll", parameters.ResultBinDir + "/net6.0");
         CopyFileToDirectory(parameters.BuildDir + "/net6.0/Cake.SqlServer.pdb", parameters.ResultBinDir + "/net6.0");
         CopyFileToDirectory(parameters.BuildDir + "/net6.0/Cake.SqlServer.xml", parameters.ResultBinDir + "/net6.0");
+
+        CopyFileToDirectory(parameters.BuildDir + "/net7.0/Cake.SqlServer.dll", parameters.ResultBinDir + "/net7.0");
+        CopyFileToDirectory(parameters.BuildDir + "/net7.0/Cake.SqlServer.pdb", parameters.ResultBinDir + "/net7.0");
+        CopyFileToDirectory(parameters.BuildDir + "/net7.0/Cake.SqlServer.xml", parameters.ResultBinDir + "/net7.0");
 
         CopyFiles(new FilePath[] { "LICENSE", "README.md", "ReleaseNotes.md" }, parameters.ResultBinDir);
 	});

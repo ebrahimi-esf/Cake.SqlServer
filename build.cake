@@ -1,5 +1,6 @@
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.13.0"
 #tool "nuget:?package=GitVersion.CommandLine&version=5.8.1"
+#tool "nuget:?package=NuGet.CommandLine&version=5.9.1"
 #load "./parameters.cake"
 
 

@@ -422,8 +422,6 @@ But I wanted to implement things like creating a database if it does not exist. 
 
 # How To Contribute
 
-Install [.Net Framwork 4.7.2 Developer Pack](https://www.microsoft.com/net/download/thank-you/net472-developer-pack)
-
 Open a command prompt in the root folder, and run these commands (Only need to run this once for any project. It will allow powershell scripts to execute):
 
 ```
